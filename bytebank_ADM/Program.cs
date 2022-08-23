@@ -1,10 +1,29 @@
 ﻿using bytebank_ADM.Funcionarios;
+using bytebank_ADM.Utilitario;
 
 Console.WriteLine("Boas Vindas, ao ByteBank Administração");
 
-Funcionario pedro = new Funcionario(1);
-pedro.nome = "Pedro";
-pedro.cpf = "12345698";
-pedro.salario = 2000;
+GerenciadorDeBonificacao gerenciador = new GerenciadorDeBonificacao();
 
-Console.WriteLine($"Bonificação: {pedro.getBonificacao()}");
+Funcionario pedro = new Funcionario();
+pedro.Nome = "Pedro";
+pedro.Cpf = "12345698";
+pedro.Salario = 2000;
+
+//Console.WriteLine($"Nome: {pedro.Nome}");
+//Console.WriteLine($"CPF: {pedro.Cpf}");
+//Console.WriteLine($"Salário: {pedro.Salario}");
+
+Diretor paula = new Diretor();
+paula.Nome = "Paula";
+paula.Cpf = "1241661613";
+paula.Salario = 5000;
+
+Console.WriteLine($"Bonificação Pedro: {pedro.getBonificacao()}");
+Console.WriteLine($"Bonificação Paula: {paula.getBonificacao()} ");
+
+
+gerenciador.Registrar(pedro);
+gerenciador.Registrar(paula);
+
+Console.WriteLine($"Total de Bonificação: {gerenciador.getBonificacao()}");

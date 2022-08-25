@@ -8,11 +8,16 @@ namespace bytebank_ADM.Funcionarios
 {
     public class Diretor:Funcionario
     {
-        public Diretor(string cpf):base(cpf)
+        public Diretor(string cpf,double salario):base(cpf,salario)
         { }
         public override double getBonificacao()
         {
             return Salario + base.getBonificacao();
+        }
+
+        public override void aumentarSalario()
+        {
+            Salario *= 1.15;
         }
     }
 }

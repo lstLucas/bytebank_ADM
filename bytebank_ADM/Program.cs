@@ -5,17 +5,15 @@ Console.WriteLine("Boas Vindas, ao ByteBank Administração");
 
 GerenciadorDeBonificacao gerenciador = new GerenciadorDeBonificacao();
 
-Funcionario pedro = new Funcionario("12345678");
+Funcionario pedro = new Funcionario("12345678",2000);
 pedro.Nome = "Pedro";
-pedro.Salario = 2000;
 
-Diretor paula = new Diretor("1241661613");
+Diretor paula = new Diretor("1241661613", 5000);
 paula.Nome = "Paula";
-paula.Salario = 5000;
 
-Funcionario andre = new Diretor("9876554122");
+
+Funcionario andre = new Diretor("9876554122", 3500);
 andre.Nome = "André";
-andre.Salario = 3500;
 
 Console.WriteLine($"Bonificação Pedro: {pedro.getBonificacao()}");
 Console.WriteLine($"Bonificação Paula: {paula.getBonificacao()} ");
@@ -25,5 +23,11 @@ Console.WriteLine($"Bonificação André: {andre.getBonificacao()}");
 gerenciador.Registrar(pedro);
 gerenciador.Registrar(paula);
 gerenciador.Registrar(andre);
+
 Console.WriteLine(Funcionario.totalFuncionarios);
+
+andre.aumentarSalario();
+pedro.aumentarSalario();
+
+Console.WriteLine("Novo salário do André: "+ andre.Salario);
 Console.WriteLine($"Total de Bonificação: {gerenciador.getBonificacao()}");

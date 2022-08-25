@@ -8,13 +8,19 @@ namespace bytebank_ADM.Funcionarios
 {
     public class Funcionario
     {
-        public Funcionario(string cpf) {
+        public Funcionario(string cpf, double salario) {
             Cpf = cpf;
+            Salario = salario;  
             totalFuncionarios++;
+        }
+
+        public virtual void aumentarSalario() {
+            this.Salario *= 1.1;
+        
         }
         public string Nome { get; set; }
         public string Cpf { get; private set; }
-        public double Salario { get; set; }
+        public double Salario { get; protected set; }
 
         public virtual double getBonificacao() {
                 return Salario * 0.1;

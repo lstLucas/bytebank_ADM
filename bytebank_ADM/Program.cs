@@ -19,7 +19,7 @@ void CalcularBonificação() {
     GerenteDeContas camila = new GerenteDeContas("326.985.628-89");
     camila.Nome = "Camila";
 
-    Desenvolvedor cleiton = new Desenvolvedor("050.392.123.-33");
+    Desenvolvedor cleiton = new Desenvolvedor("050.392.123-33");
     cleiton.Nome = "Cleiton";
 
     gerenciador.Registrar(pedro);

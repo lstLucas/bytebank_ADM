@@ -19,5 +19,6 @@ namespace bytebank_ADM.Funcionarios
         {
             return Salario * 0.17;
         }
+
     }
 }
